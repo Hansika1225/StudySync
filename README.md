@@ -1,0 +1,250 @@
+# 📚 StudySync — Your Study Space, Anywhere
+
+StudySync is a student-focused study notes application designed to make
+learning more organized, accessible, and reliable.
+
+The goal is to build an offline-first study platform where students can
+create, manage, and access their study notes even when an internet
+connection is unavailable.
+
+The project is being developed incrementally, starting with note management
+and local data persistence, followed by offline capabilities and reliable
+data synchronization.
+
+## ✨ Features
+
+### ✅ Implemented
+
+- 📝 Create and save study notes.
+- ✏️ Edit existing notes.
+- 🗑️ Delete notes.
+- 🔍 Search notes by title, content, or subject.
+- 💾 Persist notes using IndexedDB through Dexie.js.
+- 🔄 Retain saved notes after refreshing the page.
+- 🎨 Clean, responsive interface designed for a focused study experience.
+
+### 🚧 Planned Features
+
+- 📡 Offline access using Progressive Web App (PWA) capabilities.
+- 🔄 Synchronization between local storage and a backend server.
+- ⚔️ Conflict handling when the same note is edited on multiple devices
+  while offline.
+- 🔐 User authentication and personal study spaces.
+- 🧪 Automated testing for important application workflows.
+- ☁️ Deployment for public access.
+
+> Note: Planned features will be implemented and documented as development
+> progresses.
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| React | Building the user interface |
+| TypeScript | Type-safe application development |
+| Vite | Development server and build tooling |
+| CSS | Styling and responsive layouts |
+| IndexedDB | Browser-based local data storage |
+| Dexie.js | Simplifying IndexedDB operations |
+| Git & GitHub | Version control and project collaboration |
+
+### Future Technologies
+
+The following technologies are being considered for upcoming development
+phases:
+
+- Service Workers — offline caching and application support.
+- Node.js and Express.js — backend API.
+- PostgreSQL — persistent server-side storage.
+- Vitest and React Testing Library — automated testing.
+
+## 🏗️ How It Works
+
+StudySync currently stores notes directly in the browser.
+
+1. A student creates or edits a note.
+2. The application saves the note to IndexedDB.
+3. The interface retrieves the saved notes and displays them.
+4. Notes remain available after the page is refreshed.
+
+Dexie.js provides a convenient interface for interacting with IndexedDB.
+
+### Current Architecture
+
+    Student
+       |
+       v
+    React + TypeScript UI
+       |
+       v
+    Dexie.js
+       |
+       v
+    IndexedDB (Browser Storage)
+
+### Planned Offline-First Architecture
+
+    React + TypeScript PWA
+       |
+       v
+    Local IndexedDB Storage
+       |
+       v
+    Synchronization Layer
+       |
+       v
+    Backend API (Node.js + Express)
+       |
+       v
+    PostgreSQL Database
+
+The planned synchronization layer will address offline changes and
+potential conflicts between devices.
+
+## 🚀 Getting Started
+
+Follow these steps to run StudySync locally.
+
+### Prerequisites
+
+Install the following:
+
+- Node.js
+- npm
+- Git (optional, for version control)
+
+### 1. Clone the Repository
+
+Replace `<your-repository-url>` with your GitHub repository URL.
+
+    git clone <your-repository-url>
+
+### 2. Navigate to the Project
+
+    cd StudySync
+
+### 3. Install Dependencies
+
+On Windows PowerShell, run:
+
+    npm.cmd install
+
+On terminals where npm works normally, use:
+
+    npm install
+
+### 4. Start the Development Server
+
+On Windows PowerShell:
+
+    npm.cmd run dev
+
+Alternatively:
+
+    npm run dev
+
+### 5. Open the Application
+
+Vite will display a local development URL, usually:
+
+    http://localhost:5173/
+
+Open the displayed URL in your browser.
+
+## 📁 Project Structure
+
+The project currently follows the standard Vite React + TypeScript structure.
+
+    StudySync/
+    ├── public/
+    ├── src/
+    │   ├── App.tsx
+    │   ├── App.css
+    │   ├── index.css
+    │   ├── db.ts
+    │   └── main.tsx
+    ├── index.html
+    ├── package.json
+    ├── package-lock.json
+    ├── tsconfig.json
+    └── README.md
+
+### Important Files
+
+| File | Responsibility |
+|---|---|
+| `App.tsx` | Main application UI and note management logic |
+| `App.css` | Application-specific styling |
+| `index.css` | Global CSS |
+| `db.ts` | IndexedDB database configuration using Dexie |
+| `main.tsx` | React application entry point |
+| `package.json` | Project dependencies and scripts |
+
+## 🗃️ Database Design
+
+StudySync currently uses a local IndexedDB database named `StudySyncDatabase`.
+
+The `notes` table stores study notes with the following fields:
+
+| Field | Type | Description |
+|---|---|---|
+| `id` | Number | Auto-incremented note identifier |
+| `title` | String | Title of the note |
+| `content` | String | Note content |
+| `subject` | String | Subject or category |
+| `color` | String | Note card color |
+
+The `id` field is automatically generated by IndexedDB through Dexie's
+auto-increment functionality.
+
+## 🎯 Project Objectives
+
+StudySync aims to explore practical software engineering concepts through
+a real-world student productivity application.
+
+Key learning objectives include:
+
+- Building reusable and maintainable React components.
+- Using TypeScript for safer application development.
+- Managing persistent browser-side data with IndexedDB.
+- Designing an offline-first application architecture.
+- Handling data consistency and synchronization.
+- Testing application behavior and edge cases.
+- Understanding the trade-offs involved in distributed data updates.
+
+## 🔮 Future Improvements
+
+Potential improvements include:
+
+- Progressive Web App installation.
+- Background synchronization.
+- Conflict resolution strategies for concurrent note edits.
+- User authentication and multi-device access.
+- Backend integration and cloud backups.
+- Automated unit and integration tests.
+- Production deployment.
+
+## 🤝 Contributing
+
+StudySync is currently an individual learning and development project.
+
+Suggestions, feedback, and improvement ideas are welcome.
+
+## 📜 License
+
+This project is currently being developed for educational and portfolio
+purposes.
+
+A formal open-source MIT license is added.
+
+## 👩‍💻 Author
+
+**Hansika Arora**
+
+B.Tech — Computer Science and Engineering
+
+GitHub: [https://github.com/Hansika1225/StudySync](https://github.com/Hansika1225/StudySync)
+
+---
+
+Built with 💜 to make studying more organized, accessible, and reliable.
